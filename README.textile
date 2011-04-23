@@ -8,6 +8,6 @@ h2. Install
 
 # Download the .zip file for this theme.
 # In Opal, Go to Administration > Configure > Themes > Install Theme
-# Select .zip file and click 'Install'.
+# Select .zip file on your computer and click 'Install'. 
 # Pat yourself on the back. Good Job. 
  

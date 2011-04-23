@@ -23,10 +23,10 @@
 	/*  Layout */
 	#wrapper{height:auto !important; height:100%; min-height:100%;position:relative;}
 	#wrapper > #header{width: 900px ; margin: 0 auto ;background:#F7F7F7;border:1px solid #DDDDDD;margin-top:0px;; -moz-border-radius-topleft:5px;-webkit-border-top-left-radius:5px; -moz-border-radius-topright:5px;-webkit-border-top-right-radius:5px}
-	#wrapper > #content{width: 880px ;background:#fff;padding:10px;margin: 0 auto ;;border:1px solid #DDDDDD;border-top:0px;-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px; -moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px}
+	#wrapper > #content{width: 880px ;background:#fff;padding:10px 10px 100px 10px;margin: 0 auto ;margin-bottom:20px;;border:1px solid #DDDDDD;border-top:0px;-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px; -moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px}
 			#wrapper > #content #main{width:605px;float:left;border-right:1px solid #ccc;padding-right:10px;;min-height:300px;}
 			#wrapper > #content #side{width:240px;float:right;padding-left:10px}
-	#wrapper > #footer{;width:100%;;padding:10px 0px;;background:url(../images/bgs/black_trans_05.png) repeat;;text-align:center;}
+	#wrapper > #footer{height:45px;width:100%;;padding:10px 0px;/*;background:url(../images/bgs/black_trans_05.png) repeat;*/;text-align:center;}
 
 	/* Main Menu */
 	ul.main_menu{list-style:none;text-align:center;background:url(../images/bgs/main_menu-01.png) repeat-x center center;;border-top:1px solid #DDDDDD;padding:5px 0px;margin:0px;text-transform:uppercase;font-family:'MankSansRegular';font-size:22px;letter-spacing:1px;}
