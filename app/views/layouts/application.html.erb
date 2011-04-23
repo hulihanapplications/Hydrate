@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<%= render :partial => "shared/head" %>
+</head>
+
+<body>
+<div id="wrapper">
+	<%= render :partial => "browse/top_bar" %>				    		
+	<div id="header">
+		<%= render :partial => "shared/header" %>
+	</div>
+	<div id="content">
+		 <%= render :partial => "shared/flash", :locals => {:flash => flash} unless params[:controller] == "user_sessions" && params[:action] == "new" %>
+		 <%= render :partial => "/browse/banner_top" %>		 		 
+		 <%= render :partial => "/user/menu" if @show_user_menu %>
+		 <%= render :partial => "/admin/menu" if @show_admin_menu %>		 
+	     <%= yield %>			
+ 		 <% if @show_user_menu || @show_admin_menu %>
+		  <%# Close Tab Div in Menu Partial %>
+		  	<div style="clear:both"></div><!-- Break Floats -->
+		  	</div>
+		  </div>
+		 <% end %>
+		<div style="clear:both"></div><!-- Break Floats -->
+ 		<%= render :partial => "/browse/banner_bottom" %>		
+	</div>
+	<div id="footer">
+		<%= show_page Page.get_system_page(I18n.t('seeds.page.website_bottom.title')) %>
+		<%= render :partial => "shared/footer" %>
+	</div>
+</div>
+</body>
+
+</html>
