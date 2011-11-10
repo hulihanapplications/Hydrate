@@ -3,7 +3,7 @@
 <br>
 	
 	<div class="box_2" style="margin-bottom:5px;" align=center>
-		 <% if session[:original_uri] %>
+		 <% if !params[:redirect_to].blank? %>
 			<div class="notice">
 				<div class="success" style="margin:0px 0px 5px 0px">
 						<%= icon("success") %>
@@ -11,13 +11,19 @@
 				</div>
 			</div>
 		<% end %>
-		<% form_for @user_session do |f| %>
+		
+		<% unless Authentication.providers.empty? %>
+			<%= content_tag(:h2, t("label.use_authentication"), :class => "title")  %>
+			<%= render :partial => "authentications/providers" %>
+		<% end %>
+		<h2 class="title"><%= t("label.log_in") %></h2>
+		<%= form_for @user_session do |f| %>
 			 <table>
 			  <tr>
-			   	<td><%= User.human_attribute_name(:username) %></td><td > <%= f.text_field :username %></td>
+			   	<td><%= f.label :username %></td><td > <%= f.text_field :username %></td>
 			  </tr>
 			  <tr>
-			  	<td><%= User.human_attribute_name(:password) %></td><td > <%= f.password_field :password %></td>
+			  	<td><%= f.label :password %></td><td > <%= f.password_field :password %></td>
 			  </tr>
 			  <tr>
 				<td><%= f.label :remember_me, t("label.remember_me") %></td>			  	
@@ -28,7 +34,6 @@
 			  </tr>
 			 </table>
 	     <% end %>
-	     <!--
 		 <div class="box_2" style=";margin-bottom:0px">
 		 	<%= t("label.log_in_forgot_password") %>
 			<%= link_to_function(icon("cycle") + " " + t("label.log_in_recover_password"), "toggle_box('forgot_password_box')") %>
@@ -46,7 +51,6 @@
 			    </div>			
 			</div>
 		 </div> 
-		-->
 	</div>
 	<% if @setting[:allow_user_registration] %>
 		<div class="box_2" style="margin-bottom:5px">
